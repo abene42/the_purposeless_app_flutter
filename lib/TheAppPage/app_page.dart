@@ -30,19 +30,17 @@ class _AppPageState extends State<AppPage> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text(
-                        'Logo',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white,
-                          fontSize: 27.94,
-                        ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/demo_logo.png'),
                       ),
-                    ],
+                    ),
+                  ),
+                  const Spacer(
+                    flex: 14,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -58,18 +56,41 @@ class _AppPageState extends State<AppPage> {
                       )
                     ],
                   ),
-                  TextFormField(
-                    style: const TextStyle(
-                      color: Colors.white,
-                      backgroundColor: Colors.red,
-                      fontSize: 20,
+                  const Spacer(
+                    flex: 2,
+                  ),
+                  SizedBox(
+                    width: 199.8,
+                    height: 62.08,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment(-1.0, 0.0),
+                          end: Alignment.centerRight,
+                          tileMode: TileMode.mirror,
+                          colors: [
+                            Color.fromRGBO(236, 9, 38, 1),
+                            Color.fromRGBO(229, 3, 32, 1),
+                          ],
+                        ),
+                      ),
+                      child: TextFormField(
+                        style: const TextStyle(
+                          color: Colors.white,
+                          backgroundColor: Colors.red,
+                          fontSize: 20,
+                        ),
+                        decoration: const InputDecoration(
+                          fillColor: Colors.transparent,
+                          enabled: true,
+                          filled: true,
+                          border: InputBorder.none,
+                        ),
+                      ),
                     ),
-                    decoration: const InputDecoration(
-                      fillColor: Color.fromRGBO(236, 9, 38, 1),
-                      enabled: true,
-                      filled: true,
-                      border: InputBorder.none,
-                    ),
+                  ),
+                  const Spacer(
+                    flex: 8,
                   ),
                   Container(
                     height: 282,
@@ -89,13 +110,17 @@ class _AppPageState extends State<AppPage> {
                       ],
                     ),
                   ),
+                  const Spacer(
+                    flex: 1,
+                  ),
                   Stack(
                     fit: StackFit.loose,
                     children: [
                       const Positioned(
-                        left: 60,
+                        left: 120,
+                        top: 5,
                         child: CircleAvatar(
-                          radius: 20,
+                          radius: 16,
                           child: Text(
                             '24',
                             style: TextStyle(
@@ -107,7 +132,7 @@ class _AppPageState extends State<AppPage> {
                         ),
                       ),
                       Container(
-                        width: 100.86,
+                        width: 200,
                         height: 93.73,
                         margin: const EdgeInsets.only(top: 10),
                         decoration: const BoxDecoration(
@@ -116,9 +141,95 @@ class _AppPageState extends State<AppPage> {
                                 AssetImage('assets/images/among_us_avatar.png'),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
+                  const Spacer(
+                    flex: 1,
+                  ),
+                  const Text(
+                    'Your Points',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 18.09,
+                    ),
+                  ),
+                  const Spacer(
+                    flex: 8,
+                  ),
+                  Container(
+                    width: 197.33,
+                    height: 62.14,
+                    decoration: const BoxDecoration(
+                      // color: Colors.red,
+                      gradient: LinearGradient(
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        tileMode: TileMode.mirror,
+                        colors: [
+                          Color.fromRGBO(255, 31, 59, 1),
+                          Color.fromRGBO(176, 0, 23, 1),
+                        ],
+                      ),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Export',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w900,
+                          fontSize: 18.09,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Spacer(
+                    flex: 8,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 5),
+                        child: Column(
+                          children: [
+                            Stack(
+                              children: [
+                                Container(
+                                  height: 51.46,
+                                  width: 51.46,
+                                  decoration: const BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                          'assets/images/exchange_rectangle.png'),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: 23.23,
+                                  left: 12.615,
+                                  child: Container(
+                                    height: 3,
+                                    width: 25.23,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Text(
+                              'Exchange',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 18.5,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
