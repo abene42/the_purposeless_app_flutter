@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class AppPage extends StatefulWidget {
   const AppPage({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _AppPageState extends State<AppPage> {
       decoration: const BoxDecoration(
         color: Color.fromRGBO(119, 119, 119, 1),
         image: DecorationImage(
-          image: AssetImage('assets/background_image.png'),
+          image: AssetImage('assets/images/background_image.png'),
           fit: BoxFit.cover,
         ),
       ),
@@ -22,12 +23,14 @@ class _AppPageState extends State<AppPage> {
         backgroundColor: Colors.transparent,
         body: SafeArea(
           child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.08,
-                  child: Row(
+            child: ConstrainedBox(
+              constraints: BoxConstraints.loose(Size(
+                  MediaQuery.of(context).size.width,
+                  MediaQuery.of(context).size.height)),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Text(
@@ -41,15 +44,7 @@ class _AppPageState extends State<AppPage> {
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.1,
-                  width: MediaQuery.of(context).size.width,
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.06,
-                  width: MediaQuery.of(context).size.width,
-                  child: Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Text(
@@ -63,24 +58,69 @@ class _AppPageState extends State<AppPage> {
                       )
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 62,
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  child: TextFormField(
-                      style: const TextStyle(
-                        color: Colors.white,
-                        backgroundColor: Colors.red,
-                        fontSize: 20,
+                  TextFormField(
+                    style: const TextStyle(
+                      color: Colors.white,
+                      backgroundColor: Colors.red,
+                      fontSize: 20,
+                    ),
+                    decoration: const InputDecoration(
+                      fillColor: Color.fromRGBO(236, 9, 38, 1),
+                      enabled: true,
+                      filled: true,
+                      border: InputBorder.none,
+                    ),
+                  ),
+                  Container(
+                    height: 282,
+                    width: 276,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image:
+                            AssetImage('assets/images/qr_code_placeholder.png'),
+                        fit: BoxFit.cover,
                       ),
-                      decoration: const InputDecoration(
-                        fillColor: Color.fromRGBO(236, 9, 38, 1),
-                        enabled: true,
-                        filled: true,
-                        border: InputBorder.none,
-                      )),
-                ),
-              ],
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                          color: Color.fromRGBO(0, 0, 0, 0.25),
+                          blurRadius: 5.34444,
+                          offset: Offset(2.87778, 2.3333),
+                        )
+                      ],
+                    ),
+                  ),
+                  Stack(
+                    fit: StackFit.loose,
+                    children: [
+                      const Positioned(
+                        left: 60,
+                        child: CircleAvatar(
+                          radius: 20,
+                          child: Text(
+                            '24',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w900,
+                                fontFamily: 'Roboto',
+                                color: Color.fromRGBO(236, 7, 37, 1)),
+                          ),
+                          backgroundColor: Colors.white,
+                        ),
+                      ),
+                      Container(
+                        width: 100.86,
+                        height: 93.73,
+                        margin: const EdgeInsets.only(top: 10),
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image:
+                                AssetImage('assets/images/among_us_avatar.png'),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
