@@ -22,6 +22,7 @@ class _AppPageState extends State<AppPage> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SafeArea(
+          bottom: true,
           child: SingleChildScrollView(
             child: ConstrainedBox(
               constraints: BoxConstraints.loose(Size(
@@ -31,8 +32,8 @@ class _AppPageState extends State<AppPage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    height: 100,
-                    width: 100,
+                    height: 80,
+                    width: 80,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('assets/images/demo_logo.png'),
@@ -40,7 +41,7 @@ class _AppPageState extends State<AppPage> {
                     ),
                   ),
                   const Spacer(
-                    flex: 14,
+                    flex: 10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -60,8 +61,8 @@ class _AppPageState extends State<AppPage> {
                     flex: 2,
                   ),
                   SizedBox(
-                    width: 199.8,
-                    height: 62.08,
+                    width: 180,
+                    height: 50,
                     child: Container(
                       decoration: const BoxDecoration(
                         gradient: LinearGradient(
@@ -78,23 +79,23 @@ class _AppPageState extends State<AppPage> {
                         style: const TextStyle(
                           color: Colors.white,
                           backgroundColor: Colors.red,
-                          fontSize: 20,
+                          fontSize: 28,
                         ),
                         decoration: const InputDecoration(
                           fillColor: Colors.transparent,
-                          enabled: true,
-                          filled: true,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
                           border: InputBorder.none,
                         ),
                       ),
                     ),
                   ),
                   const Spacer(
-                    flex: 8,
+                    flex: 4,
                   ),
                   Container(
-                    height: 282,
-                    width: 276,
+                    height: 242,
+                    width: 226,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image:
@@ -117,16 +118,17 @@ class _AppPageState extends State<AppPage> {
                     fit: StackFit.loose,
                     children: [
                       const Positioned(
-                        left: 120,
+                        left: 110,
                         top: 5,
                         child: CircleAvatar(
                           radius: 16,
                           child: Text(
                             '24',
                             style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                fontFamily: 'Roboto',
-                                color: Color.fromRGBO(236, 7, 37, 1)),
+                              fontWeight: FontWeight.w900,
+                              fontFamily: 'Roboto',
+                              color: Color.fromRGBO(236, 7, 37, 1),
+                            ),
                           ),
                           backgroundColor: Colors.white,
                         ),
@@ -144,9 +146,6 @@ class _AppPageState extends State<AppPage> {
                       ),
                     ],
                   ),
-                  const Spacer(
-                    flex: 1,
-                  ),
                   const Text(
                     'Your Points',
                     style: TextStyle(
@@ -156,11 +155,11 @@ class _AppPageState extends State<AppPage> {
                     ),
                   ),
                   const Spacer(
-                    flex: 8,
+                    flex: 4,
                   ),
                   Container(
-                    width: 197.33,
-                    height: 62.14,
+                    width: 180,
+                    height: 50,
                     decoration: const BoxDecoration(
                       // color: Colors.red,
                       gradient: LinearGradient(
@@ -185,7 +184,7 @@ class _AppPageState extends State<AppPage> {
                     ),
                   ),
                   const Spacer(
-                    flex: 8,
+                    flex: 4,
                   ),
                   Row(
                     children: [
@@ -229,6 +228,9 @@ class _AppPageState extends State<AppPage> {
                         ),
                       ),
                     ],
+                  ),
+                  const Spacer(
+                    flex: 5,
                   )
                 ],
               ),
