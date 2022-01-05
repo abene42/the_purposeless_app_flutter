@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "547203305459",
+    "project_id": "the-purposeless-app",
+    "storage_bucket": "the-purposeless-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547203305459:android:6711d77ca9dfc2804dcc86",
+        "android_client_info": {
+          "package_name": "com.purposeless.app.the_purposeless_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547203305459-6sphsga3so8kp2417eb8t15s84n27rjv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.purposeless.app.the_purposeless_app",
+            "certificate_hash": "79908b8064b4536c22831ebcdf41a196790a6706"
+          }
+        },
+        {
+          "client_id": "547203305459-ictjjjuggoieknsqnd44k1u27pe0n7k8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPmWYyt4K9b3t7w41FvedbBe4kUHwyf84"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547203305459-ictjjjuggoieknsqnd44k1u27pe0n7k8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

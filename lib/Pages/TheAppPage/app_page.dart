@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:the_purposeless_app/Controllers/authentication.dart';
+import 'package:the_purposeless_app/Widgets/google_signin_button.dart';
 
 class AppPage extends StatefulWidget {
   const AppPage({Key? key}) : super(key: key);
@@ -9,6 +11,12 @@ class AppPage extends StatefulWidget {
 }
 
 class _AppPageState extends State<AppPage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -187,9 +195,10 @@ class _AppPageState extends State<AppPage> {
                     flex: 4,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 5),
+                        margin: const EdgeInsets.only(left: 5),
                         child: Column(
                           children: [
                             Stack(
@@ -227,6 +236,24 @@ class _AppPageState extends State<AppPage> {
                           ],
                         ),
                       ),
+                      FutureBuilder(
+                        future:
+                            Authentication.initializeFirebase(context: context),
+                        builder: (BuildContext context,
+                            AsyncSnapshot<dynamic> snapshot) {
+                          if (snapshot.hasError) {
+                            return Text('Error initializing Firebase');
+                          } else if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return const GoogleSignInButton();
+                          }
+                          return const CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              Colors.orange,
+                            ),
+                          );
+                        },
+                      )
                     ],
                   ),
                   const Spacer(

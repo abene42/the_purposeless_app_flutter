@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_purposeless_app/TheAppPage/app_page.dart';
+import 'package:the_purposeless_app/Pages/TheAppPage/app_page.dart';
 
 void main() {
   runApp(const MyApp());
